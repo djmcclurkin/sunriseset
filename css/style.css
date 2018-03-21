@@ -1,3 +1,10 @@
 body {
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;
 }
+.hello {
+    color: #1234c0;
+    background: #e0ff80;
+    font-weight: bold;
+    font-size: 48px;
+    font-style: italic;
+}
