@@ -1,26 +1,29 @@
 import React from 'react';
+import DayPicker from 'react-day-picker';
+import 'react-day-picker/lib/style.css';
 
 export default class extends React.Component {
 
     constructor(...args) {
         super(...args)
         this.state = {};
-        this.textChange = this.textChange.bind(this);
+        this.handleDayClick = this.handleDayClick.bind(this);
     }
 
-    textChange(e) {
-        console.log(e.target.value);
+    handleDayClick(date) {
         this.setState({
-            text: e.target.value
-        })
+            date
+        });
+        console.log(date);
     }
 
     render() {
         return(
             <div>
-                <h1>Sunrise/Sunset Application</h1>
-                <input onChange={this.textChange.bind(this)}/>
-                <span>{this.state.text}</span>
+                <DayPicker
+                    selectedDays={this.state.day}
+                    onDayClick={this.handleDayClick}
+                />
             </div>
         );
     }
